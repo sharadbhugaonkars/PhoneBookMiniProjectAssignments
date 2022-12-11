@@ -25,7 +25,7 @@ public class ContactRestController {
 	@Autowired
 	private IContactService service;
 	
-	//1. create one student
+	//1. create one contact
 	@PostMapping("/create")
 	public ResponseEntity<String> createContact(
 			@RequestBody Contact contact
@@ -38,7 +38,7 @@ public class ContactRestController {
 		return new ResponseEntity<String>(message, HttpStatus.CREATED);//201
 	}
 	
-	//2. fetch all students
+	//2. fetch all contacts
 	@GetMapping("/all")
 	public ResponseEntity<List<Contact>> getAllContacts() {
 		List<Contact> list = service.getAllContacts();
@@ -46,7 +46,7 @@ public class ContactRestController {
 		return ResponseEntity.ok(list);
 	}
 	
-	//3. fetch one by id
+	//3. fetch one by contactId
 	@GetMapping("/find/{contactId}")
 	public ResponseEntity<Contact> getOneContact(
 			@PathVariable("contactId") Integer contactId
@@ -63,7 +63,7 @@ public class ContactRestController {
 		return response;
 	}
 	
-	//4. remove one by id
+	//4. remove one by contactId
 	@DeleteMapping("/remove/{contactId}")
 	public ResponseEntity<String> deleteStudent(
 			@PathVariable("contactId") Integer contactId
@@ -80,7 +80,7 @@ public class ContactRestController {
 		return response;
 	}
 	
-	//5. update student
+	//5. update contact
 	@PutMapping("/modify")
 	public ResponseEntity<String> updateContact(
 			@RequestBody Contact contact
