@@ -37,7 +37,7 @@ public class ContactServiceImpl implements IContactService {
 		return "Contact Updated!!!";
 		
 		} else {
-			throw new ContactNotFoundException("STUDENT '"+contact.getContactId()+"'Contact NOT EXIST");
+			throw new ContactNotFoundException("CONTACT '"+contact.getContactId()+"'NOT EXIST");
 		}
 	}
 
